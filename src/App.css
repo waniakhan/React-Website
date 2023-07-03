@@ -1156,6 +1156,8 @@ form .custom-email-field button:hover {
 
 #banner {
   display: flex;
+  margin-top: 20px;
+  margin-bottom: 80px;
   flex-direction: column;
   justify-content: center;
   align-items:flex-start;
