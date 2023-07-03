@@ -1151,3 +1151,59 @@ form .custom-email-field button:hover {
   line-height: 1.5;
   color: #030303;
 }
+
+/* banne card  */
+
+#banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:flex-start;
+  text-align: center;
+  background-image: url(https://cdn.shopify.com/s/files/1/1308/3723/files/rose-gold-desktop-4.jpg?v=1667943047&width=5000);
+  width: 100%;
+  height: 50vh;
+  background-position: center;
+  background-size: cover;
+}
+#banner:hover {
+  background-image: url(https://i.pinimg.com/originals/e0/d1/4a/e0d14a8f9f2046757a7c6dc9f079d70b.jpg);
+
+}
+
+#banner h4 {
+  color: rgb(12, 12, 12);
+  font-size: 40px;
+  margin-left: 100px;
+}
+
+#banner h2 {
+  color: rgb(10, 10, 10);
+  font-size: 30px;
+  padding: 13px 0;
+  margin-left: 30px;
+
+}
+
+#banner h2 span.discount {
+  color: #ef3636;
+  margin-left: 30px;
+
+}
+
+#banner button.btn-explore {
+  background-color:#000;
+  border: 2px solid rgb(241, 238, 238);
+  color: rgb(8, 8, 8);
+  padding: 10px 20px;
+  margin-left: 150px;
+
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#banner button.btn-explore:hover {
+  background-color: #5e6868;
+}
+

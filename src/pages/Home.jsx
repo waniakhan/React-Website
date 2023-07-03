@@ -204,7 +204,19 @@ export default function Home() {
   </div>
 </div>
 
+{/* banner card  */}
 
+<section id="banner" className="section-m1">
+  <h4>ZM OFFERS</h4>
+  <h2>
+    UP TO <span className="discount">70% OFF</span> WATCHES &amp;
+    <span className="fragrance" style={{ display: "block" }}>
+      FRAGNANCE
+    </span>
+  </h2>
+  <button className="btn-explore" >
+    <a href="/products" style={{ textDecoration: "none", color: "white" }}>Explore NOW</a></button>
+</section>
 
 {/* our team members */}
 
@@ -269,6 +281,7 @@ export default function Home() {
     </div>
   </div>
 </div>
+
 
 {/* services cards  */}
 
