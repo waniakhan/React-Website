@@ -64,23 +64,23 @@ export default function About() {
         </Accordion>
       </div>\
 
-      <div class="your-container">
-    <div class="your-card">
-      <h2 class="your-card-heading">Mission</h2>
+      <div className="your-container">
+    <div className="your-card">
+      <h2 className="your-card-heading">Mission</h2>
       <i><MdLibraryBooks></MdLibraryBooks></i>
-      <p class="your-card-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce rutrum interdum nulla, ac varius quam lobortis a.</p>
+      <p className="your-card-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce rutrum interdum nulla, ac varius quam lobortis a.</p>
     </div>
 
-    <div class="your-card">
-      <h2 class="your-card-heading">Vision</h2>
+    <div className="your-card">
+      <h2 className="your-card-heading">Vision</h2>
       <i><GoEye></GoEye></i>
-      <p class="your-card-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce rutrum interdum nulla, ac varius quam lobortis a.</p>
+      <p className="your-card-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce rutrum interdum nulla, ac varius quam lobortis a.</p>
     </div>
 
-    <div class="your-card">
-      <h2 class="your-card-heading">Objective</h2>
+    <div className="your-card">
+      <h2 className="your-card-heading">Objective</h2>
       <i><RiSearchEyeLine></RiSearchEyeLine></i>
-      <p class="your-card-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce rutrum interdum nulla, ac varius quam lobortis a.</p>
+      <p className="your-card-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce rutrum interdum nulla, ac varius quam lobortis a.</p>
     </div>
   </div>
 

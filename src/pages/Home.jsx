@@ -55,46 +55,46 @@ export default function Home() {
 {/* new arrival cards  */}
 
 <div id='arrival'>
-<div class="many-row">
+<div className="many-row">
   <div>
-    <div class="responsive-card">
-      <div class="responsive-imgbox">
-        <img src="https://media.istockphoto.com/id/1177589023/photo/light-bulb-hanging-by-the-ceiling-in-a-restaurant.webp?b=1&s=170667a&w=0&k=20&c=WEBVPscDAL3MiPrWWzbgrA3qupXbq3RG4lsQkao0qhw=" class="responsive-img" />
+    <div className="responsive-card">
+      <div className="responsive-imgbox">
+        <img src="https://media.istockphoto.com/id/1177589023/photo/light-bulb-hanging-by-the-ceiling-in-a-restaurant.webp?b=1&s=170667a&w=0&k=20&c=WEBVPscDAL3MiPrWWzbgrA3qupXbq3RG4lsQkao0qhw=" className="responsive-img" />
       </div>
-      <div class="responsive-content">
+      <div className="responsive-content">
         <h2>Lights</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
-        <h5 class="card__price">Price: $9.5</h5>
+        <h5 className="card__price">Price: $9.5</h5>
       </div>
     </div>
   </div>
   <div>
-    <div class="responsive-card">
-      <div class="responsive-imgbox">
-        <img src="https://st3.depositphotos.com/1177973/15307/i/600/depositphotos_153075942-stock-photo-jewelry-accessories-in-box.jpg" class="responsive-img" />
+    <div className="responsive-card">
+      <div className="responsive-imgbox">
+        <img src="https://st3.depositphotos.com/1177973/15307/i/600/depositphotos_153075942-stock-photo-jewelry-accessories-in-box.jpg" className="responsive-img" />
       </div>
-      <div class="responsive-content">
+      <div className="responsive-content">
         <h2>Jewellery</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
-        <h5 class="card__price">Price: $9.5</h5>
+        <h5 className="card__price">Price: $9.5</h5>
       </div>
     </div>
   </div>
-  <div class="col-md-4">
-    <div class="responsive-card">
-      <div class="responsive-imgbox">
-        <img src="https://www.webbikeworld.com/wp-content/uploads/2020/08/wallpaperflare.com_wallpaper-2.jpg" class="responsive-img" />
+  <div className="col-md-4">
+    <div className="responsive-card">
+      <div className="responsive-imgbox">
+        <img src="https://www.webbikeworld.com/wp-content/uploads/2020/08/wallpaperflare.com_wallpaper-2.jpg" className="responsive-img" />
       </div>
-      <div class="responsive-content">
+      <div className="responsive-content">
         <h2>Motorcycle</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
-        <h5 class="card__price">Price: $9.5</h5>
+        <h5 className="card__price">Price: $9.5</h5>
       </div>
     </div>
   </div>
@@ -105,99 +105,99 @@ export default function Home() {
 
 {/* upcoming sale banner */}
 
-<div class="background">
-  <h1 class="fw-bold text-center col-sm-12">Upcoming Sale</h1>
-  <h2 class="fw-bold text-center col-sm-12">Up to 20% off</h2>
-  <div class="blinking-cover"></div>
+<div className="background">
+  <h1 className="fw-bold text-center col-sm-12">Upcoming Sale</h1>
+  <h2 className="fw-bold text-center col-sm-12">Up to 20% off</h2>
+  <div className="blinking-cover"></div>
 </div>
 
 
 {/* upcoming sale card */}
 
-<div id="services" class="container">
-  <div class="card-row row justify-content-center">
-    <div class="col-md-4 col-sm-6 mb-4 text-center">
-      <div class="card-container">
-        <figure class="card">
+<div id="services" className="container">
+  <div className="card-row row justify-content-center">
+    <div className="col-md-4 col-sm-6 mb-4 text-center">
+      <div className="card-container">
+        <figure className="card">
           <img
             src="https://media.istockphoto.com/id/1155023238/photo/female-legs-in-stylish-black-jeans-in-white-leather-sneakers-with-snake-pattern-on-the.webp?b=1&amp;s=170667a&amp;w=0&amp;k=20&amp;c=QdQpNvPG9RQH9Ap8AHAyDbFRNk6te8r7FCil8nbEVgo="
             alt=""
-            class="card__image"
+            className="card__image"
           />
-          <figcaption class="card__body">
-            <h2 class="card__title">Sneakers</h2>
+          <figcaption className="card__body">
+            <h2 className="card__title">Sneakers</h2>
             <div>
-              <p class="card__description">
+              <p className="card__description">
                 Some description about this card and its purpose.
               </p>
             </div>
-            <button class="card__sale-button">Sale</button>
+            <button className="card__sale-button">Sale</button>
           </figcaption>
         </figure>
-        <div class="product-details">
-          <h5 class="card__heading">Women sneakers</h5>
+        <div className="product-details">
+          <h5 className="card__heading">Women sneakers</h5>
           <AiFillStar></AiFillStar>
           <AiFillStar></AiFillStar>
           <AiFillStar></AiFillStar>
           <AiFillStar></AiFillStar>
           <BsStarHalf></BsStarHalf>
-          <h5 class="card__price">Price: $9.5</h5>
+          <h5 className="card__price">Price: $9.5</h5>
         </div>
       </div>
     </div>
 
-    <div class="col-md-4 col-sm-6 mb-4 text-center">
-      <div class="card-container">
-        <figure class="card">
+    <div className="col-md-4 col-sm-6 mb-4 text-center">
+      <div className="card-container">
+        <figure className="card">
           <img
             src="https://media.istockphoto.com/id/1034939250/photo/mid-century-modern-chair-with-a-blanket-and-a-large-sofa-with-colorful-cushions-in-a-spacious.webp?b=1&amp;s=170667a&amp;w=0&amp;k=20&amp;c=57OPhvhKvW3OVpB0kGGPs_FMpVxoFn-qZVxguaDspaU="
             alt=""
-            class="card__image"
+            className="card__image"
           />
-          <figcaption class="card__body">
-            <h2 class="card__title">Sofa</h2>
-            <p class="card__description">
+          <figcaption className="card__body">
+            <h2 className="card__title">Sofa</h2>
+            <p className="card__description">
               Some description about this card and its purpose.
             </p>
-            <button class="card__sale-button">Sale</button>
+            <button className="card__sale-button">Sale</button>
           </figcaption>
         </figure>
-        <div class="product-details">
-          <h5 class="card__heading">Sofa </h5>
+        <div className="product-details">
+          <h5 className="card__heading">Sofa </h5>
           <AiFillStar></AiFillStar>
           <AiFillStar></AiFillStar>
           <AiFillStar></AiFillStar>
           <AiFillStar></AiFillStar>
           <BsStarHalf></BsStarHalf>
-          <h5 class="card__price">$10.6</h5>
+          <h5 className="card__price">$10.6</h5>
         </div>
       </div>
     </div>
 
-    <div class="col-md-4 col-sm-6 mb-4 text-center">
-      <div class="card-container">
-        <figure class="card">
+    <div className="col-md-4 col-sm-6 mb-4 text-center">
+      <div className="card-container">
+        <figure className="card">
           <img
             src="https://images.unsplash.com/photo-1591375372226-3531cf2eb6d3?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGlvciUyMHBlcmZ1bWV8ZW58MHx8MHx8fDA%3D&amp;w=1000&amp;q=80"
             alt=""
-            class="card__image"
+            className="card__image"
           />
-          <figcaption class="card__body">
-            <h2 class="card__title">perfume</h2>
-            <p class="card__description">
+          <figcaption className="card__body">
+            <h2 className="card__title">perfume</h2>
+            <p className="card__description">
               Some description about this card and its purpose.
             </p>
-            <button class="card__sale-button">Sale</button>
+            <button className="card__sale-button">Sale</button>
           </figcaption>
         </figure>
-        <div class="product-details">
-          <h5 class="card__heading">Dior perfume</h5>
+        <div className="product-details">
+          <h5 className="card__heading">Dior perfume</h5>
           <AiFillStar></AiFillStar>
           <AiFillStar></AiFillStar>
           <AiFillStar></AiFillStar>
           <AiFillStar></AiFillStar>
           <BsStarHalf></BsStarHalf>
-          <h5 class="card__price">$15</h5>
+          <h5 className="card__price">$15</h5>
         </div>
       </div>
     </div>
@@ -223,13 +223,13 @@ export default function Home() {
 <h2 className="heading fw-bold text-center fs-3 fs-sm-4 fs-md-5">Our Team Members</h2>
 
 <div id="team">
-  <div class="card-row row justify-content-center">
-    <div class="col-md-3 col-sm-6 mb-4 text-center">
-      <article class="custom-card card1">
-        <div class="custom-card__body">
-          <h2 class="custom-card__title">Alina</h2>
+  <div className="card-row row justify-content-center">
+    <div className="col-md-3 col-sm-6 mb-4 text-center">
+      <article className="custom-card card1">
+        <div className="custom-card__body">
+          <h2 className="custom-card__title">Alina</h2>
           <p>Incharge</p>
-          <div class="icons">
+          <div className="icons">
             <i className="icon icon--instagram"><BsInstagram></BsInstagram></i>
             <i className="icon icon--github"><AiFillGithub></AiFillGithub></i>
             <i className="icon icon--linkedin"><BsLinkedin></BsLinkedin></i>
@@ -238,12 +238,12 @@ export default function Home() {
       </article>
     </div>
 
-    <div class="col-md-3 col-sm-6 mb-4 text-center">
-      <article class="custom-card card2">
-        <div class="custom-card__body">
-          <h2 class="custom-card__title">Sufyan</h2>
+    <div className="col-md-3 col-sm-6 mb-4 text-center">
+      <article className="custom-card card2">
+        <div className="custom-card__body">
+          <h2 className="custom-card__title">Sufyan</h2>
           <p>HOD</p>
-          <div class="icons">
+          <div className="icons">
             <i className="icon icon--instagram"><BsInstagram></BsInstagram></i>
             <i className="icon icon--github"><AiFillGithub></AiFillGithub></i>
             <i className="icon icon--linkedin"><BsLinkedin></BsLinkedin></i>
@@ -252,12 +252,12 @@ export default function Home() {
       </article>
     </div>
 
-    <div class="col-md-3 col-sm-6 mb-4 text-center">
-      <article class="custom-card card3">
-        <div class="custom-card__body">
-          <h2 class="custom-card__title">Jennifer</h2>
+    <div className="col-md-3 col-sm-6 mb-4 text-center">
+      <article className="custom-card card3">
+        <div className="custom-card__body">
+          <h2 className="custom-card__title">Jennifer</h2>
           <p>Co-Director</p>
-          <div class="icons">
+          <div className="icons">
             <i className="icon icon--instagram"><BsInstagram></BsInstagram></i>
             <i className="icon icon--github"><AiFillGithub></AiFillGithub></i>
             <i className="icon icon--linkedin"><BsLinkedin></BsLinkedin></i>
@@ -266,12 +266,12 @@ export default function Home() {
       </article>
     </div>
 
-    <div class="col-md-3 col-sm-6 mb-4 text-center">
-      <article class="custom-card card4">
-        <div class="custom-card__body">
-          <h2 class="custom-card__title">Faisal</h2>
+    <div className="col-md-3 col-sm-6 mb-4 text-center">
+      <article className="custom-card card4">
+        <div className="custom-card__body">
+          <h2 className="custom-card__title">Faisal</h2>
           <p>Assistant</p>
-          <div class="icons">
+          <div className="icons">
             <i className="icon icon--instagram"><BsInstagram></BsInstagram></i>
             <i className="icon icon--github"><AiFillGithub></AiFillGithub></i>
             <i className="icon icon--linkedin"><BsLinkedin></BsLinkedin></i>
