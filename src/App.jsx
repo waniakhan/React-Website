@@ -8,7 +8,7 @@ import Page404 from './pages/page404'
 import ProductPage from "./pages/ProductPage"
 import Products from "./pages/Products"
 import CategoryPage from "./pages/CategoryPage"
-import Signin from "./pages/Signin"
+import Signin from './pages/Signin'
 
 export default function App() {
   const [user, setUser] = useState(true)
@@ -34,7 +34,7 @@ export default function App() {
               <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/signin" element={<Signin/>} />
-              <Route path="*" element={<Navigate to="/SIgnin" replace={true} />} />
+              <Route path="*" element={<Navigate to="/signIn" replace={true} />} />
               </Routes>
               )
 

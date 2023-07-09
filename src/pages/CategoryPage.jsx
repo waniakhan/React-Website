@@ -1,7 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import Card from 'react-bootstrap/Card';
 import axios from 'axios';
 import { BsInstagram } from 'react-icons/bs';
 import { AiFillGithub } from 'react-icons/ai';
@@ -16,6 +15,7 @@ export default function CategoryPage() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+
   useEffect(() => {
     setIsLoading(true); // Show the loader
   
@@ -29,14 +29,14 @@ export default function CategoryPage() {
 
   return (
     <>
-      <Navigation />
+      <Navigation/>
 
       <div className="container">
         <div className="my-5 text-center">
-          <h1>{categoryName.toUpperCase()}</h1>
+          <h1 style={{ marginTop: '100px' }}>{categoryName.toUpperCase()}</h1>
           <p className="text-secondary">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat, officia nihil! Nemo sunt reprehenderit
-            voluptates amet itaque libero in unde, molestias illo veniam, dolore veritatis eaque ipsum. Molestiae, nam
+            voluptates amet itaque ibero in unde, molestias illo veniam, dolore veritatis eaque ipsum. Molestiae, nam
             architecto!
           </p>
         </div>
@@ -62,14 +62,6 @@ export default function CategoryPage() {
                       <span className="pricing-table__plan-price">{val.price}</span>
                     </div>
                     <p className="pricing-table__description">{val.description}</p>
-                    <ul className="pricing-table__list">
-                      {val.features &&
-                        val.features.map((feature, index) => (
-                          <li key={index}>
-                            <b>{feature && feature.value}</b> {feature && feature.label}
-                          </li>
-                        ))}
-                    </ul>
                   </div>
                 </Link>
               ))

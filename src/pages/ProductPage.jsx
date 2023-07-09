@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useReducer, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import ReactStars from 'react-stars'
@@ -41,6 +41,22 @@ export default function ProductPage() {
         setratingStar(0)
 
     }
+    const counterCallback = (state, action) => {
+      switch (action.type) {
+        case "INCREASE_COUNT":
+          return { ...state, count : state.count + 1 }
+          
+          case "DECREASE_COUNT":
+            return { ...state, count : state.count > 1 ? state.count - 1 : 1 }
+        default:
+      return state;
+      }
+
+    }
+    const data = {
+count: 1
+    }
+    const [state, dispatch] = useReducer(counterCallback, data)
 
     const addToCart = () => {
         const payload = {
@@ -67,6 +83,7 @@ export default function ProductPage() {
 
     return (
         <>
+        
         <Navigation />
             <div className="text-center my-5 " >
                 <h1 style={{ marginTop: '100px' }}>{product.title} - {product.price}$</h1>
@@ -89,12 +106,12 @@ export default function ProductPage() {
                                 color2={'#ffd700'}
                             />
                         </div>
+<div className="d-flex justify-content-center my-3">
+  <button className='btn btn-dark mx-3' onClick={() => dispatch({type : "INCREASE_COUNT"})}>+</button>
+{state.count}
+<button className='btn btn-dark mx-3' onClick={() => dispatch({type : "DECREASE_COUNT"})}>-</button>
 
-                        <div className="d-flex justify-content-center my-3">
-                            <button className="btn btn-dark mx-3" disabled={productQuantity > 1 ? false : true} onClick={() => setproductQuantity(productQuantity - 1)}>-</button>
-                            {productQuantity}
-                            <button className="btn btn-dark mx-3" onClick={() => setproductQuantity(productQuantity + 1)}>+</button>
-                        </div>
+</div>                     
 
                         <div className='d-flex justify-content-center my-3'>
                             <button className='btn btn-dark ' onClick={addToCart}>Add to Cart</button>
