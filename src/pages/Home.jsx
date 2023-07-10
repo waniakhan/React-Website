@@ -361,12 +361,6 @@ export default function Home() {
   </div>
 </article>
 </div>
-
-
-
-
-
-
 <>
 {/* footer  */}
 
@@ -411,6 +405,11 @@ export default function Home() {
           <li className="footer__list-item">
             <a href="/" className="footer__list-link">
             Home
+            </a>
+          </li>
+          <li className="footer__list-item">
+            <a href="/products" className="footer__list-link">
+            Products
             </a>
           </li>
           <li className="footer__list-item">

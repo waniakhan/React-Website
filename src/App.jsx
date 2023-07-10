@@ -34,7 +34,7 @@ export default function App() {
               <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/signin" element={<Signin/>} />
-              <Route path="*" element={<Navigate to="/signIn" replace={true} />} />
+              <Route path="*" element={<Navigate to="/signin" replace={true} />} />
               </Routes>
               )
 

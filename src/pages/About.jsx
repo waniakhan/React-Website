@@ -130,6 +130,11 @@ export default function About() {
                   </a>
                 </li>
                 <li className="footer__list-item">
+            <a href="/products" className="footer__list-link">
+            Products
+            </a>
+          </li>
+                <li className="footer__list-item">
                   <a href="/contact" className="footer__list-link">
                     Contact
                   </a>

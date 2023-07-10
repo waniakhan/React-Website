@@ -158,7 +158,9 @@ count: 1
                     </div>
                 </div>
             </div>
+
           {/* footer  */}
+          
 <footer className="footer" style={{ backgroundColor: "gray"}}>
   <div className="footer__container">
     <div className="footer__top">
@@ -200,6 +202,11 @@ count: 1
           <li className="footer__list-item">
             <a href="/" className="footer__list-link">
             Home
+            </a>
+          </li>
+          <li className="footer__list-item">
+            <a href="/products" className="footer__list-link">
+            Products
             </a>
           </li>
           <li className="footer__list-item">
