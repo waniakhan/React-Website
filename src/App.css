@@ -44,7 +44,7 @@ body{
 .carousel-item img{
     object-fit: cover;
     object-position: center;
-    height: 80vh;
+    height: 100vh;
   }
 
  .custom-navbar{
@@ -424,6 +424,10 @@ margin-right: 20px; /* Add some spacing between the cards */
 .icon i {
 	margin: auto;
 }
+.icons i a {
+	color: white;
+  margin-bottom: 10px;
+}
 .icon--instagram:hover {
 	background-image: radial-gradient(
 		circle at 30% 107%,
@@ -440,8 +444,8 @@ margin-right: 20px; /* Add some spacing between the cards */
 	outline-color: #0077b5;
 }
 .icon--github:hover {
-	background-color: #2ea44f;
-	outline-color: #2ea44f;
+	background-color: #030303;
+	outline-color: #f8f8f8;
 }
 .icon--whatsapp:hover{
   background-color: #2ea44f;
@@ -659,7 +663,9 @@ i {
 .copyright-section a {
   color: white;
 }
-
+.gap {
+  margin-left: 350px; /* Adjust the value to control the amount of spacing */
+}
 
 
 @media screen and (min-width: 40em) {
@@ -1072,7 +1078,12 @@ form .custom-email-field button:hover {
   visibility: visible;
 }
 
-
+.pricing-table__description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 @media screen and (max-width: 53.5em) {
   .pricing-table__item:nth-child(1) {

@@ -34,7 +34,7 @@ export default function SignIn() {
       timer: 1500,
       showConfirmButton: false
     }).then(() => {
-      navigate('/');
+      navigate('/','/products', '/about','/contact');
     });
   };
 
@@ -61,7 +61,7 @@ export default function SignIn() {
       setPassword('');
       setConfirmPassword('');
 
-      navigate('/');
+      navigate('/','/products', '/about','/contact');
     });
   };
 
@@ -223,15 +223,21 @@ export default function SignIn() {
                    </a>
                  </li>
                  <li className="footer__list-item">
+            <a href="/products" className="footer__list-link">
+            Products
+            </a>
+          </li>
+                <li className="footer__list-item">
+                  <a href="/about" className="footer__list-link">
+                    About
+                  </a>
+                </li>
+                 <li className="footer__list-item">
                    <a href="/contact" className="footer__list-link">
                      Contact
                    </a>
                  </li>
-                 <li className="footer__list-item">
-                   <a href="/about" className="footer__list-link">
-                     About
-                   </a>
-                 </li>
+                 
                </ul>
              </div>
              <div className="form-group mb-4">
@@ -243,9 +249,9 @@ export default function SignIn() {
        </footer>
 
        {/* Copyright */}     
-         <div className="container-fluid copyright-section">
+       <div className="container-fluid copyright-section">
         <p className="p-0">
-          copyright <a href="#">@ WANIA KHAN.</a>All Rights Reserved
+          copyright @ 2023 ZM Store All Rights Reserved <span className="gap"></span>Designed by WANIA KHAN.
         </p>
       </div>
     </>

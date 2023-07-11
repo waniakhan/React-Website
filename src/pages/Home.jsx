@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+
 import Navigation from '../components/Navigation';
 import Carousel from 'react-bootstrap/Carousel';
 import {AiFillStar} from 'react-icons/ai'
@@ -6,9 +7,11 @@ import {BsStarHalf} from 'react-icons/bs'
 import {BsInstagram} from 'react-icons/bs'
 import {AiFillGithub} from 'react-icons/ai'
 import {BsLinkedin} from 'react-icons/bs'
-import {BsWhatsapp} from 'react-icons/bs'
 import Footer from '../components/Footer';
+
+
 export default function Home() {
+  
   return (
 <>
 <Navigation />
@@ -17,23 +20,30 @@ export default function Home() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://wallpaper.dog/large/5468296.jpg"
+          src="src/components/Yellow Simple and Clean Virtual Assistant Promotion Facebook Cover (1).png"
 
           alt="First slide"
         />
       </Carousel.Item>
       <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://images.unsplash.com/photo-1562616261-7bb659f860ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80"
+          alt="Second slide"
+        />
+      </Carousel.Item>
+      <Carousel.Item>
          <img
           className="d-block w-100"
-          src="https://wallpaperaccess.com/full/2016613.jpg"
-          alt="Second slide"
+          src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80"
+          alt="Third slide"
         /> 
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://media.istockphoto.com/id/1217867447/photo/lamps-over-the-table.webp?b=1&s=170667a&w=0&k=20&c=iH4_oRTP6c4m21R5AjMbaanM1kvg5mBxjhqtz6B6Hf0="
-          alt="Third slide"
+          src="https://images.unsplash.com/photo-1623998021450-85c29c644e0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=957&q=80"
+          alt="Fourth slide"
         />
       </Carousel.Item>
     </Carousel> 
@@ -41,10 +51,11 @@ export default function Home() {
     <>
 {/* new arrival heading */}
 
-  <section className="products">
-  <div className="container-fluid my-5">
+  <section className="products" >
+  <div className="container-fluid my-5"data-aos="fade-up"
+     data-aos-duration="3000">
     <div>
-      <h2 className="text-center col-sm-12 glowing-text">
+      <h2 className="text-center col-sm-12 glowing-text" >
         New Arrival
       </h2>
       <hr className="w-25 m-auto" />
@@ -230,9 +241,9 @@ export default function Home() {
           <h2 className="custom-card__title">Alina</h2>
           <p>Incharge</p>
           <div className="icons">
-            <i className="icon icon--instagram"><BsInstagram></BsInstagram></i>
-            <i className="icon icon--github"><AiFillGithub></AiFillGithub></i>
-            <i className="icon icon--linkedin"><BsLinkedin></BsLinkedin></i>
+            <i className="icon icon--github"><a href="https://github.com/waniakhan"><AiFillGithub></AiFillGithub></a></i>
+            <i className="icon icon--instagram"><a href="https://manoo_khan67/"><BsInstagram></BsInstagram></a></i>
+            <i className="icon icon--linkedin"><a href="https://www.linkedin.com/in/wania-khan-42527122a/"><BsLinkedin></BsLinkedin></a></i>
           </div>
         </div>
       </article>
@@ -244,9 +255,9 @@ export default function Home() {
           <h2 className="custom-card__title">Sufyan</h2>
           <p>HOD</p>
           <div className="icons">
-            <i className="icon icon--instagram"><BsInstagram></BsInstagram></i>
-            <i className="icon icon--github"><AiFillGithub></AiFillGithub></i>
-            <i className="icon icon--linkedin"><BsLinkedin></BsLinkedin></i>
+          <i className="icon icon--github"><a href="https://github.com/waniakhan"><AiFillGithub></AiFillGithub></a></i>
+            <i className="icon icon--instagram"><a href="https://manoo_khan67/"><BsInstagram></BsInstagram></a></i>
+            <i className="icon icon--linkedin"><a href="https://www.linkedin.com/in/wania-khan-42527122a/"><BsLinkedin></BsLinkedin></a></i>
           </div>
         </div>
       </article>
@@ -258,9 +269,9 @@ export default function Home() {
           <h2 className="custom-card__title">Jennifer</h2>
           <p>Co-Director</p>
           <div className="icons">
-            <i className="icon icon--instagram"><BsInstagram></BsInstagram></i>
-            <i className="icon icon--github"><AiFillGithub></AiFillGithub></i>
-            <i className="icon icon--linkedin"><BsLinkedin></BsLinkedin></i>
+          <i className="icon icon--github"><a href="https://github.com/waniakhan"><AiFillGithub></AiFillGithub></a></i>
+            <i className="icon icon--instagram"><a href="https://manoo_khan67/"><BsInstagram></BsInstagram></a></i>
+            <i className="icon icon--linkedin"><a href="https://www.linkedin.com/in/wania-khan-42527122a/"><BsLinkedin></BsLinkedin></a></i>
           </div>
         </div>
       </article>
@@ -272,9 +283,9 @@ export default function Home() {
           <h2 className="custom-card__title">Faisal</h2>
           <p>Assistant</p>
           <div className="icons">
-            <i className="icon icon--instagram"><BsInstagram></BsInstagram></i>
-            <i className="icon icon--github"><AiFillGithub></AiFillGithub></i>
-            <i className="icon icon--linkedin"><BsLinkedin></BsLinkedin></i>
+          <i className="icon icon--github"><a href="https://github.com/waniakhan"><AiFillGithub></AiFillGithub></a></i>
+            <i className="icon icon--instagram"><a href="https://manoo_khan67/"><BsInstagram></BsInstagram></a></i>
+            <i className="icon icon--linkedin"><a href="https://www.linkedin.com/in/wania-khan-42527122a/"><BsLinkedin></BsLinkedin></a></i>
           </div>
         </div>
       </article>

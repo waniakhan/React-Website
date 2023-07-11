@@ -20,18 +20,18 @@ export default function Footer() {
               <h2>Contact us</h2>
               <ul className="footer__list">
                 <li className="footer__list-item">
-                  <a href="#" className="footer__list-link">
+                  <a href="https://www.linkedin.com/in/wania-khan-42527122a/" className="footer__list-link">
                     <i className="icon icon--linkedin"><BsLinkedin /></i>
                   </a>
                 </li>
                 <li className="footer__list-item">
-                  <a href="#" className="footer__list-link ">
+                  <a href="https://manoo_khan67/" className="footer__list-link ">
                     <i className="icon icon--instagram"><BsInstagram /></i>
 
                   </a>
                 </li>
                 <li className="footer__list-item">
-                  <a href="#" className="footer__list-link">
+                  <a href="https://github.com/waniakhan" className="footer__list-link">
                     <i className="icon icon--github"><AiFillGithub /></i>
                   </a>
                 </li>
@@ -57,13 +57,13 @@ export default function Footer() {
             </a>
           </li>
                 <li className="footer__list-item">
-                  <a href="/contact" className="footer__list-link">
-                    Contact
+                  <a href="/about" className="footer__list-link">
+                    About
                   </a>
                 </li>
                 <li className="footer__list-item">
-                  <a href="/about" className="footer__list-link">
-                    About
+                  <a href="/contact" className="footer__list-link">
+                    Contact
                   </a>
                 </li>
               </ul>
@@ -77,7 +77,7 @@ export default function Footer() {
       </footer>
       <div className="container-fluid copyright-section">
         <p className="p-0">
-          copyright <a href="#">@ WANIA KHAN.</a>All Rights Reserved
+          copyright @ 2023 ZM Store All Rights Reserved <span className="gap"></span>Designed by WANIA KHAN.
         </p>
       </div>
  </>

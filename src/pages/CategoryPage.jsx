@@ -5,6 +5,7 @@ import axios from 'axios';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 import Spinner from 'react-bootstrap/Spinner';
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
 
 
 export default function CategoryPage() {
@@ -37,7 +38,10 @@ export default function CategoryPage() {
             architecto!
           </p>
         </div>
-
+        <Breadcrumb>
+        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+        <Breadcrumb.Item href="/Products">Products</Breadcrumb.Item>
+      </Breadcrumb>
         <section>
           <div className="pricing-table">
             {isLoading ? (
@@ -47,6 +51,7 @@ export default function CategoryPage() {
             ) : (
               products &&
               products.map((val, key) => (
+               
                 <Link className="text-decoration-none" to={`/products/${val.id}`} key={key}>
                   <div className="pricing-table__item">
                     <h3 className="pricing-table__title">{val.title}</h3>
