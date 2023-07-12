@@ -34,7 +34,7 @@ export default function SignIn() {
       timer: 1500,
       showConfirmButton: false
     }).then(() => {
-      navigate('/','/products', '/about','/contact');
+      navigate('/');
     });
   };
 
@@ -61,7 +61,7 @@ export default function SignIn() {
       setPassword('');
       setConfirmPassword('');
 
-      navigate('/','/products', '/about','/contact');
+      navigate('/');
     });
   };
 
