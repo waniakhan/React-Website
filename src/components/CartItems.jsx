@@ -15,14 +15,14 @@ function CartItems({ product }) {
   };
 
   return (
-    <div className="card cart-item" style={{ height: '190px', backgroundColor: 'white' }}>
+    <div className="card cart-item" style={{ height: '160px', backgroundColor: 'white' }}>
       <div className="row g-0">
         <div className="col-md-4">
           <img
             src={product.thumbnail}
             alt={product.title}
             className="card-img-top cart-item-image"
-            style={{ height: '120px', width: '180px', backgroundColor: 'white' }}
+            style={{ height: '140px', width: '180px', backgroundColor: 'white' }}
           />
         </div>
         <div className="col-md-8">
