@@ -15,7 +15,7 @@ function CartItems({ product }) {
   };
 
   return (
-    <div className="card cart-item" style={{ height: '160px', backgroundColor: 'white' }}>
+    <div className="card cart-item" style={{ height: '190px', backgroundColor: 'white' }}>
       <div className="row g-0">
         <div className="col-md-4">
           <img
