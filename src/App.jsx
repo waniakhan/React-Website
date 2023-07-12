@@ -9,7 +9,6 @@ import ProductPage from "./pages/ProductPage"
 import Products from "./pages/Products"
 import CategoryPage from "./pages/CategoryPage"
 import Signin from './pages/Signin'
-import CartContextProvider from '../src/context/addtoCart/context';
 
 export default function App() {
   const [user, setUser] = useState(true)
