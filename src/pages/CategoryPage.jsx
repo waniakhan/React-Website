@@ -57,7 +57,7 @@ export default function CategoryPage() {
                     <h3 className="pricing-table__title">{val.title}</h3>
                     <p className="pricing-table__subtitle">{val.subtitle}</p>
                     <div className="pricing-table__thumbnail">
-                      <img src={val.thumbnail} alt={val.title} />
+                      <img src={val.thumbnail} alt={val.title} style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
                     </div>
                     <div className="pricing-table__plan">
                       <span className="pricing-table__plan-currency">$</span>
