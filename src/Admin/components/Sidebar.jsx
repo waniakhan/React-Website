@@ -23,6 +23,11 @@ const location = useLocation()
         tab: "Brands",
         url: "/brands",
         icon: <TbBrandSolidjs />
+    },
+    {
+        tab: "Products",
+        url: "/products",
+        icon: <TbBrandSolidjs />
     }
 ]
 

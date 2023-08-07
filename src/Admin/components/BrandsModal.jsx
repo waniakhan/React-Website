@@ -5,7 +5,7 @@ import { storage } from '../utils/FirebaseConfig';
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import Button from 'react-bootstrap/Button';
 
-function BrandsModal() {
+function BrandsModal({recallData}) {
     const [show, setShow] = useState(false);
     const [brandName, setBrandName] = useState("");
     const [brandImage, setBrandImage] = useState(null);
@@ -22,14 +22,17 @@ function BrandsModal() {
                 const payload = { BrandName: brandName, BrandImage: url };
 
                 axios.post('http://localhost:5800/api/create-brand', payload)
-                    .then(response => {
-                        console.log(response.data);
+                    .then((json) => {
                         setShow(false);
+                        recallData(json.data.brands);
                     })
-                    .catch(err => console.log(err));
+                    .catch(err => {
+                        console.error(err);
+                        alert(err.message);
+                    });
             })
             .catch((error) => {
-                console.log(error);
+                alert(error.message);
             });
         });
     }

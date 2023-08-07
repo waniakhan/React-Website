@@ -15,7 +15,7 @@ export default function Brands() {
     <div>
       <div className="d-flex justify-content-between align-items-center bg-primary my-2 p-2">
         <span className="fs-4 fw-bold text-white">Brands</span>
-        <BrandsModal />
+        <BrandsModal recallData = {setBrands} />
       </div>
       <div className="container">
         <table className="table">

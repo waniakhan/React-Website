@@ -28,7 +28,7 @@ function CategoryModal({recallData}) {
                 axios.post('http://localhost:5800/api/create-category', payload)
                     .then((json) => {
                         setShow(false);
-                        recallData(json.data);
+                        recallData(json.data.category);
                     })
                     .catch(err => {
                         console.error(err);
