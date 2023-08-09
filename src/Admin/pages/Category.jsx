@@ -8,21 +8,29 @@ export default function Category() {
   const [category, setCategory] = useState([]); 
 
   useEffect(() => {
-    axios.get('http://localhost:5800/api/get-all-categories')
-      .then((json) => setCategory(json.data.category))
-      .catch((err) => console.log(err));
+    fetchCategories();
   }, []);
 
-  const deleteProduct = (id) => {
-    console.log(id)
-    axios.delete('http://localhost:5800/api/delete-category',
-    {
-      id
-    }).then((json)=>setCategory(json.data.category))
+  const fetchCategories = () => {
+    axios
+      .get('http://localhost:5800/api/get-all-categories')
+      .then((response) => setCategory(response.data.category))
+      .catch((error) => console.log(error));
+  };
 
-  }
+  const deleteCategory = (_id) => {
+    axios
+      .delete('http://localhost:5800/api/delete-category', { data: { _id } })
+      .then(() => fetchCategories())
+      .catch((error) => console.log(error));
+  };
 
-
+  const updateCategory = (_id, newData) => {
+    axios
+      .put('http://localhost:5800/api/update-category', { _id, ...newData })
+      .then(() => fetchCategories()) // Refresh categories after update
+      .catch((error) => console.log(error));
+  };
 
   return (
     <div className="container">
@@ -49,8 +57,23 @@ export default function Category() {
                 <td>{val.CategoryName}</td>
                 <td><img src={val.CategoryImage} className='img-fluid' style={{height: '7vh', objectFit: 'contain' }} alt="" /></td>
               <td>
-                <button className='btn btn-dark mx-1'><BsFillPencilFill /></button>
-              <button className='btn btn-dark mx-1' onClick={()=>deleteProduct(val._id)}><AiFillDelete /></button>
+              <button
+                className="btn btn-dark mx-1"
+                onClick={() => {
+                  // Similar to BrandsModal, show a prompt or modal for updating
+                  const newCategoryName = prompt('Enter new Category Name:', val.CategoryName);
+                  const newCategoryImage = prompt('Enter new Category Image URL:', val.CategoryImage);
+                  if (newCategoryName && newCategoryImage) {
+                    updateCategory(val._id, {
+                      CategoryName: newCategoryName,
+                      CategoryImage: newCategoryImage,
+                    });
+                  }
+                }}
+              >
+                <BsFillPencilFill />
+              </button>          
+               <button className='btn btn-dark mx-1' onClick={()=>deleteCategory(val._id)}><AiFillDelete /></button>
               </td>
               </tr>
             ))}

@@ -48,7 +48,7 @@ export default function Navigation() {
             <div><button className='btn btn-dark'
             onClick={()=>{
               dispatch({
-                type: "USER_LOGOUT"
+                type: "USERLOGOUT"
               })
             }}
             >LOGOUT</button></div>

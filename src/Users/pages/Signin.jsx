@@ -8,7 +8,7 @@ import { BsLinkedin } from 'react-icons/bs';
 import { BsWhatsapp } from 'react-icons/bs';
 import Navigation from '../components/Navigation'
 
-export default function SignIn() {
+export default function SignIn({setUser}) {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -43,6 +43,7 @@ export default function SignIn() {
       showConfirmButton: false
     }).then(() => {
       saveUserDataToLocalStorage(username, true);
+      setUser(true)
       navigate('/');
     });
   };
@@ -71,6 +72,7 @@ export default function SignIn() {
       setConfirmPassword('');
 
       saveUserDataToLocalStorage(username, true);
+      setUser(true)
 
       navigate('/');
     });
@@ -101,7 +103,7 @@ export default function SignIn() {
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              pattern="[a-zA-Z0-9._%+-]+@gmail\.com$"
+    
               title="Please enter a valid email address with the domain 'gmail.com'"
 
               required

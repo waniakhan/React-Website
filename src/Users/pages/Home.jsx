@@ -20,7 +20,7 @@ export default function Home() {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://i.pinimg.com/736x/5c/b5/34/5cb5344bd3af65f75fd3da0aaf67df58.jpg"
+            src="src/Users/components/Yellow Simple and Clean Virtual Assistant Promotion Facebook Cover (1).png"
 
             alt="First slide"
           />
