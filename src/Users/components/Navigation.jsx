@@ -45,6 +45,7 @@ export default function Navigation() {
             <Nav className="mx-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
               <Link to="/" className='text-decoration-none text-dark mx-3'><FaHome className='mx-1' />Home</Link>
               <Link to="/products" className='text-decoration-none text-dark mx-3'><FaShoppingCart className='mx-1' />Products</Link>
+              <Link to="/userCategory" className='text-decoration-none text-dark mx-3'><FaShoppingCart className='mx-1' />Category</Link>
 
               <Link to="/about" className='text-decoration-none text-dark mx-3'><FaInfoCircle className='mx-1' />About</Link>
               <Link to="/contact" className='text-decoration-none text-dark mx-3'><FaEnvelope className='mx-1' />Contact </Link>
