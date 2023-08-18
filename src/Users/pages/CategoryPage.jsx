@@ -17,8 +17,9 @@ export default function CategoryPage() {
   useEffect(() => {
     setIsLoading(true); // Show the loader
   
-    axios.get(`https://dummyjson.com/products/category/${categoryName}`).then((json) => {
+    axios.get(`https://dummyjson.com/products/category/${categoryName}` ).then((json) => {
       setProducts(json.data.products);
+ 
       setTimeout(() => {
         setIsLoading(false); // Hide the loader after 2000ms
       }, 2000);

@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 
 export const GlobalContext = createContext("Initial Value");
 let data = {
-   
+    user: "user",
     token: Cookies.get('token') || undefined
 };
 

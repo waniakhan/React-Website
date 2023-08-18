@@ -6,6 +6,8 @@ import Users from './Users';
 import { GlobalContext } from './context/context';
 import { decodeToken } from 'react-jwt'
 
+
+export const AppRoute = '/'
 const componentsByRoles = {
   'admin': Admin,
   'user': Users,
@@ -19,24 +21,16 @@ export default function App() {
 
   const decodeUser = (token) => {
     if (!token) {
-      return undefined;
-    } else {
-      const res = decodeToken(token);
-      return res?.role;
+      return undefined
+    }
+    else {
+      const res = decodeToken(token)
+      return res?.role
     }
   }
 
-  const CurrentToken = decodeUser(state.token);
-  const CurrentUserRole = getUserRole(CurrentToken);
-
-  return (
-    <div>
-      {state.token ? (
-        <CurrentUserRole />
-      ) : (
-        <Users />
-      )}
-    </div>
-  );
+  const currentToken = decodeUser(state.token)
+  const CurrentUser = getUserRole(currentToken)
+  return <CurrentUser />
 }
 

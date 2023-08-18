@@ -34,7 +34,7 @@ export default function ImageSection({ images }) {
                 style={{ cursor: 'pointer' }}
               />
               <button
-                className="btn btn-dark"
+                className="btn btn-dark" style={{width: '210px'}}
                 onClick={() => setShowModal(true)}
        
               >

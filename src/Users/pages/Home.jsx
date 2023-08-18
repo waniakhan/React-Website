@@ -216,7 +216,7 @@ export default function Home() {
         </div>
 
         {/* banner card  */}
-
+     
         <section id="banner" className="section-m1">
           <h4>ZM OFFERS</h4>
           <h2>

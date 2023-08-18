@@ -61,7 +61,7 @@ export default function CategoriesSection() {
   return (
     <div className="container">
       <div className="my-5 text-center">
-        <h1>Categories</h1>
+        <h1>Products</h1>
         <p className="text-secondary">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus illum, laudantium earum sit saepe dolore
           aperiam vitae ullam iusto deserunt, ipsam asperiores temporibus! Quis exercitationem neque porro nisi saepe
@@ -71,6 +71,7 @@ export default function CategoriesSection() {
       <Breadcrumb>
         <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
         <Breadcrumb.Item  active >Products</Breadcrumb.Item>
+        <Breadcrumb.Item href='/userCategory'>Category</Breadcrumb.Item>
       </Breadcrumb>
        
       <div className="row">

@@ -8,29 +8,30 @@ import Page404 from './pages/page404';
 import ProductPage from './pages/ProductPage';
 import Products from './pages/Products';
 import CategoryPage from './pages/CategoryPage';
-import Signin from './pages/Signin';
+import Profile from '../Users/components/ProfileCard/Profile'
+import CustomCart from './pages/CustomCart'
+import UserCategory from './pages/userCategory';
 
 export default function Users() {
-  const [user, setUser] = useState(false); 
+
 
   return (
+    <>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/signin" element={<Signin setUser={setUser} />} />
-      
-      {user ? (
-        <>
           <Route path="/products" element={<Products />} />
           <Route path="/products/:productID" element={<ProductPage />} />
           <Route path="/products/category/:categoryName" element={<CategoryPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-        </>
-      ) : (
-        <Route path="*" element={<Navigate to="/signin" replace={true} />} />
-      )}
-      
-      <Route path="*" element={<Page404 />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/cart" element={<CustomCart />} />
+          <Route path="/userCategory" element={<UserCategory />} />
+
+        
+          
+      {/* <Route path="*" element={<Page404 />} /> */}
     </Routes>
+    </>
   );
 }

@@ -7,14 +7,18 @@ import Swal from 'sweetalert2';
 import ImageSection from '../Components/ImageSection';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
-import { CartContext } from '../context/addtoCart/context';
+import { CartContext } from '../CartContext/context'
+
 
 export default function ProductPage() {
   const { productID } = useParams();
   const [product, setProduct] = useState({});
+  const [quantity, setQuantity] = useState(1)
   const [review, setReview] = useState('');
   const [ratingStar, setRatingStar] = useState(0);
-  const { addToCart } = useContext(CartContext);
+
+
+ const { cart_state, cart_dispatch } = useContext(CartContext)
 
   const ratingChanged = (newRating) => {
     setRatingStar(newRating);
@@ -39,25 +43,44 @@ export default function ProductPage() {
     setReview('');
     setRatingStar(0);
   };
-  const counterCallback = (state, action) => {
-    switch (action.type) {
-      case "INCREASE_COUNT":
-        return { ...state, count : state.count + 1 }
-        
-        case "DECREASE_COUNT":
-          return { ...state, count : state.count > 1 ? state.count - 1 : 1 }
-      default:
-    return state;
-    }
 
-  }
-  const data = {
-count: 1
-  }
-  const [state, dispatch] = useReducer(counterCallback, data)
   useEffect(() => {
+    console.log(cart_state)
     axios.get(`https://dummyjson.com/products/${productID}`).then((json) => setProduct(json.data));
   }, []);
+
+  const addtocart = () => {
+    const existingCartItem = cart_state.cart.find(item => item.id === product.id);
+
+    if (existingCartItem) {
+        // Product is already in the cart, show a message or perform any other action
+        console.log("Product already in the cart!");
+        return;
+    }
+
+    const payload = { ...product, quantity };
+    console.log(payload);
+
+    cart_dispatch({
+        type: "ADD_TO_CART",
+        payload
+    });
+
+    Swal.fire({
+      icon: 'success',
+      title: 'Success!',
+      text: 'Product added to cart',
+      showConfirmButton: false,
+      timer: 2000,
+      customClass: {
+        container: 'custom-swal-container',
+        popup: 'custom-swal-popup',
+        title: 'custom-swal-title',
+        content: 'custom-swal-content',
+      } 
+  });
+};
+
 
   return (
     <>
@@ -80,18 +103,18 @@ count: 1
             </div>
 
             <div className="d-flex justify-content-center my-3">
-            <div className="d-flex justify-content-center my-3">
-  <button className='btn btn-dark mx-3' onClick={() => dispatch({type : "INCREASE_COUNT"})}>+</button>
-{state.count}
-<button className='btn btn-dark mx-3' onClick={() => dispatch({type : "DECREASE_COUNT"})}>-</button>
+            <div className="d-flex justify-content-center my-3 ">
+            <button className="btn btn-dark mx-3" style={{width: '50px'}} disabled={quantity <= 1 ? true : false} onClick={() => setQuantity(quantity - 1)}>-</button>
+                        {quantity}
+                        <button className="btn btn-dark mx-3"  style={{width: '50px'}} onClick={() => setQuantity(quantity + 1)}>+</button>
 
 </div>   
             </div>
 
             <div className="d-flex justify-content-center my-3">
-              <button className="btn btn-dark " onClick={() => addToCart(product)}>
-                Add to Cart
-              </button>
+            <button className="btn btn-dark" style={{width: '150px'}} onClick={addtocart} disabled={cart_state.cart.some(item => item.id === product.id)}>
+    {cart_state.cart.some(item => item.id === product.id) ? "Already in Cart" : "Add to Cart"}
+</button>
             </div>
           </div>
 
@@ -130,7 +153,7 @@ count: 1
                     <span className="ms-3">({ratingStar})</span>
                   </div>
                 </div>
-                <button className="my-3 btn btn-dark" onClick={submitReview}>
+                <button className="my-3 btn btn-dark" style={{width: '130px'}} onClick={submitReview}>
                   Submit review
                 </button>
               </div>
