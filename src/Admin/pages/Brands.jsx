@@ -3,7 +3,8 @@ import BrandsModal from '../components/BrandsModal';
 import axios from 'axios';
 import { BsFillPencilFill } from 'react-icons/bs';
 import { AiFillDelete } from 'react-icons/ai';
-import { AppRoute } from '../../App';
+import { Alert } from 'react-bootstrap';
+
 
 
 export default function Brands() {
@@ -51,9 +52,9 @@ export default function Brands() {
     <div>
       <div className="position-fixed top-0 end-0 p-3">
         {successMessage && (
-          <div className="alert alert-success" role="alert">
-            {successMessage}
-          </div>
+             <Alert variant="success" onClose={() => setSuccessMessage('')} dismissible>
+             {successMessage}
+           </Alert>
         )}
       </div>
       <div className="d-flex justify-content-between align-items-center bg-primary my-2 p-2">

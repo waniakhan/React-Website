@@ -10,7 +10,6 @@ import Swal from 'sweetalert2';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import Spinner from 'react-bootstrap/Spinner';
-import { AppRoute } from '../../../App';
 
 export default function CustomCart() {
     const { cart_state, cart_dispatch } = useContext(CartContext);
@@ -93,12 +92,16 @@ export default function CustomCart() {
         try {
             const response = await axios.post('http://localhost:5800/api/create-order', payload);
             console.log(response.data);
-            Swal.fire({
-                icon: 'success',
-                title: 'Order Placed Successfully!',
-                text: 'Check your email for order details.',
-                confirmButtonText: 'OK'
-            });
+             Swal.fire({
+            icon: 'success',
+            title: 'Order Placed Successfully!',
+            text: 'Check your email for order details.',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            // Clear the cart and dispatch an action to update the context
+            setProducts([]);
+            cart_dispatch({ type: "CLEAR_CART" }); // Assuming you have a CLEAR_CART action
+        });
         } catch (err) {
             console.log(err.message);
             Swal.fire({

@@ -4,22 +4,70 @@ import { GlobalContext } from '../../../context/context';
 import Cookies from 'js-cookie';
 import { useJwt } from 'react-jwt';
 
-export default function ProfileCard( ) {
+export default function ProfileCard() {
     const { state } = useContext(GlobalContext);
     const [adminName, setAdminName] = useState('');
     const [adminEmail, setAdminEmail] = useState('');
     const { decodedToken } = useJwt(Cookies.get('token'));
-
+    const [isEditing, setIsEditing] = useState(false); // Add editing state
+    const [selectedImage, setSelectedImage] = useState(null); // Add state for selected image
+    const [selectedImageName, setSelectedImageName] = useState(''); // Add this line
+  
     useEffect(() => {
         if (decodedToken) {
             setAdminName(decodedToken.username);
             setAdminEmail(decodedToken.email);
+
+            const storedImage = localStorage.getItem(`selectedImage_${decodedToken.username}_${decodedToken.email}`);
+            const storedImageName = localStorage.getItem(`selectedImageName_${decodedToken.username}_${decodedToken.email}`);
+
+            if (storedImage && storedImageName) {
+                setSelectedImage(JSON.parse(storedImage));
+                setSelectedImageName(storedImageName);
+            } else {
+                setSelectedImage(null);
+                setSelectedImageName('');
+            }
         }
     }, [decodedToken]);
-    
+
+    const handleEditClick = () => {
+        setIsEditing(true);
+    };
+
+    const handleSaveClick = () => {
+        setIsEditing(false);
+
+        if (selectedImage && decodedToken) {
+            localStorage.setItem(`selectedImage_${decodedToken.username}_${decodedToken.email}`, JSON.stringify(selectedImage));
+            localStorage.setItem(`selectedImageName_${decodedToken.username}_${decodedToken.email}`, selectedImageName);
+        }
+    };
+
+    const handleImageUpload = (event) => {
+        const file = event.target.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = (e) => {
+                const base64Image = e.target.result;
+                setSelectedImage(base64Image);
+                setSelectedImageName(file.name);
+
+                if (decodedToken) {
+                    localStorage.setItem(`selectedImage_${decodedToken.username}_${decodedToken.email}`, base64Image);
+                    localStorage.setItem(`selectedImageName_${decodedToken.username}_${decodedToken.email}`, file.name);
+                }
+            };
+
+            reader.readAsDataURL(file);
+        }
+    };
+
     return (
-        <div className="card" style={{    height: '300px'}}>
-            <div className="card__img">
+        <div className=" my-card" style={{ height: '400px', marginTop: '50px', width: '40%' }}>
+            <div className="my-card__img"  >
                 <svg xmlns="http://www.w3.org/2000/svg" width="100%">
                     <rect fill="#ffffff" width={540} height={450} />
                     <defs>
@@ -121,15 +169,59 @@ export default function ProfileCard( ) {
                     <rect x={0} y={0} fill="url(#b)" width="100%" height="100%" />
                 </svg>
             </div>
+            <div className="my-card__avatar">
+            {isEditing ? (
+                <div>
+                    <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleImageUpload}
+                    />
+                </div>
+            ) : (
+                selectedImage && ( // Only show the selected image if it's the same user
+                    <img
+                        src={selectedImage}
+                        style={{
+                            width: '80%',
+                            borderRadius: '50%',
+                            objectFit: 'cover',
+                            border: '2px solid #FC726E',
+                        }}
+                        alt=""
+                    />
+                )
+            )}
 
-            <div className="card__avatar">
-                <img src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png" style={{ width: '80%' }} alt="" />
+            {!isEditing && !selectedImage && (
+                    <img
+                        src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png"
+                        style={{ width: '80%' }}
+                        alt=""
+                    />
+                )}
+        </div>
+
+            <div className="my-card__title" style={{ color: 'black' }}>
+             <b>  username:</b> {adminName}
             </div>
-            <div className="card__title">{adminName}</div> {/* Display the adminName */}
-            <div className="card__subtitle">{adminEmail}</div> 
 
-            <div className="card__subtitle">Web Development</div>
 
+            <div className="my-card__subtitle"><b>USER EMAIL:</b> {adminEmail}</div>
+            <div className="my-card__subtitle webdev"> <b>PROFESSION:</b> Web Development</div>
+
+            <div
+                className={`my-card__btn btn-primary ${isEditing ? 'editing' : ''}`}
+                style={{
+                    color: 'white', // Change color to blue
+                    cursor: 'pointer',
+                    textAlign: 'center', // Align to the right
+                    fontSize: '16px', // Increase font size
+                  }}
+                onClick={isEditing ? handleSaveClick : handleEditClick}
+            >
+                {isEditing ? 'Save' : 'Edit'}
+            </div>
         </div>
 
     )

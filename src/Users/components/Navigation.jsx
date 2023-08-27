@@ -12,10 +12,10 @@ import { useJwt } from 'react-jwt';
 import { FaListAlt } from 'react-icons/fa';
 import { CartContext } from '../CartContext/context';
 import { Badge } from 'react-bootstrap'; // Import the Badge component
-
+import { BiCategory } from 'react-icons/bi';
 
 export default function Navigation() {
-  const [adminName, setAdminName] = useState('');
+   const [adminName, setAdminName] = useState('');
   const { decodedToken } = useJwt(Cookies.get('token'));
 
   useEffect(() => {
@@ -26,14 +26,17 @@ export default function Navigation() {
 
   const handleLogout = () => {
     Cookies.remove('token');
-    // Navigate to the home page after logout
-    window.location.href = '/'; // Change this to your home URL
   };
 
-  const { cart_state } = useContext(CartContext); // Get cart state from CartContext
+  const { cart_state } = useContext(CartContext);
   const getTotalQuantity = () => {
     return cart_state.cart.reduce((total, product) => total + product.quantity, 0);
   };
+
+  // Get the selected image from localStorage if available
+  const storedImage = decodedToken ? localStorage.getItem(`selectedImage_${adminName}_${decodedToken.email}`) : null;
+  const selectedImage = storedImage ? JSON.parse(storedImage) : null;
+
   return (
     <>
       <Navbar expand="lg" className="custom-navbar fixed-top">
@@ -45,7 +48,7 @@ export default function Navigation() {
             <Nav className="mx-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
               <Link to="/" className='text-decoration-none text-dark mx-3'><FaHome className='mx-1' />Home</Link>
               <Link to="/products" className='text-decoration-none text-dark mx-3'><FaShoppingCart className='mx-1' />Products</Link>
-              <Link to="/userCategory" className='text-decoration-none text-dark mx-3'><FaShoppingCart className='mx-1' />Category</Link>
+              <Link to="/userCategory" className='text-decoration-none text-dark mx-3'><BiCategory className='mx-1' />Category</Link>
 
               <Link to="/about" className='text-decoration-none text-dark mx-3'><FaInfoCircle className='mx-1' />About</Link>
               <Link to="/contact" className='text-decoration-none text-dark mx-3'><FaEnvelope className='mx-1' />Contact </Link>
@@ -72,11 +75,14 @@ export default function Navigation() {
               </form>
             </div>
             <div className="d-flex gap-3">
-              <Link to='/profile' className="btn btn-outline-dark d-flex align-items-center gap-3 " style={{ width: '130px' }} >
-                <img src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png" style={{ height: '3vh', objectFit: 'contain' }} alt="" />
+            <Link to='/profile' className="btn btn-outline-dark d-flex align-items-center gap-3 " style={{ width: '130px' }}>
+                {selectedImage ? (
+                  <img src={selectedImage} style={{ height: '3vh', objectFit: 'contain', borderRadius: '50%' }} alt="" />
+                ) : (
+                  <img src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png" style={{ height: '3vh', objectFit: 'contain' }} alt="" />
+                )}
                 {adminName}
               </Link>
-
               <button className="btn btn-outline-dark " style={{ width: '70px' }} onClick={handleLogout}>
                 Logout
               </button>

@@ -5,6 +5,7 @@ import Category from './pages/Category';
 import Brands from './pages/Brands';
 import Products from './pages/Products';
 import { Route, Routes } from 'react-router-dom';
+import Orders from './pages/Orders';
 import './Admin.css'; // Import the CSS file
 
 export default function Admin() {
@@ -19,6 +20,7 @@ export default function Admin() {
             <Route path="/category" element={<Category />} />
             <Route path="/brands" element={<Brands />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/orders" element={<Orders />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </div>

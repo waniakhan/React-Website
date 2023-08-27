@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { AiOutlineHome } from 'react-icons/ai';
 import { BiCategory } from 'react-icons/bi';
 import { TbBrandSolidjs } from 'react-icons/tb';
+import {TbBorderStyle} from 'react-icons/tb'
+import {  FaShoppingCart } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { useJwt } from 'react-jwt';
@@ -29,7 +31,12 @@ export default function SideBar() {
     {
       tab: "Products",
       url: "/products",
-      icon: <TbBrandSolidjs />
+      icon:<FaShoppingCart />
+    },
+    {
+      tab: "Orders",
+      url: "/orders",
+      icon: <TbBorderStyle />
     }
   ];
 

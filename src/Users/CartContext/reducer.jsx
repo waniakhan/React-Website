@@ -8,6 +8,9 @@ export const reducer = (state, action) => {
             updatedCart.splice(action.index, 1);
             return { ...state, cart: updatedCart };
         }
+        case "CLEAR_CART": {
+            return { ...state, cart: [] }; // Clear the cart by setting it to an empty array
+        }
       
         default: {
             return state;

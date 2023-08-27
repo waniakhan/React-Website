@@ -20,7 +20,7 @@ export default function Home() {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="src/Users/components/Yellow Simple and Clean Virtual Assistant Promotion Facebook Cover (1).png"
+            src="https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?cs=srgb&dl=pexels-craig-dennis-205421.jpg&fm=jpg"
 
             alt="First slide"
           />
@@ -298,24 +298,24 @@ export default function Home() {
 
         <h2 className="heading fw-bold text-center fs-3 fs-sm-4 fs-md-5">Our Services</h2>
 
-        <div className="my-container">
-          <article className="my-card">
-            <div className="my-card__inner">
-              <div className="my-card__side my-card__side--front">
-                <div className="my-card__image-wrapper">
+        <div className="services-container">
+          <article className="services-card">
+            <div className="services-card__inner">
+              <div className="services-card__side your-card__side--front">
+                <div className="services-card__image-wrapper">
                   <img
                     src="https://media.istockphoto.com/id/1214019831/vector/covid-19-quarantine-coronavirus-epidemic-free-delivery-man-in-a-protective-mask-carries-food.jpg?s=612x612&w=0&k=20&c=9OxkYpgE4EXJuykWMX97Gg0nMtUw5_Aqqsygf9gVy7o="
                     alt=""
-                    className="my-card__image"
+                    className="services-card__image img-fluid"
                   />
                 </div>
-                <div className="my-card__body my-card__body--flex">
-                  <h2 className="my-card__title">HOME DELIVERY</h2>
-                  <span className="my-card__arrow">→</span>
+                <div className="services-card__body services-card__body--flex">
+                  <h2 className="services-card__title">HOME DELIVERY</h2>
+                  <span className="services-card__arrow">→</span>
                 </div>
               </div>
-              <div className="my-card__side my-card__side--back">
-                <div className="my-card__body">
+              <div className="services-card__side services-card__side--back">
+                <div className="services-card__body">
                   <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam unde adipisci quas nulla dolores esse dolor magnam repudiandae perferendis eaque, ex eveniet inventore iure ipsum incidunt quaerat, obcaecati sint hic.
                   </p>
@@ -323,23 +323,23 @@ export default function Home() {
               </div>
             </div>
           </article>
-          <article className="my-card">
-            <div className="my-card__inner">
-              <div className="my-card__side my-card__side--front">
-                <div className="my-card__image-wrapper">
+          <article className="services-card">
+            <div className="services-card__inner">
+              <div className="services-card__side services-card__side--front">
+                <div className="services-card__image-wrapper">
                   <img
                     src="https://pictures.dealer.com/a/asbury/1067/21591f6a6c9a0f81df5148b3e1d6c903x.jpg?impolicy=downsize&w=568"
                     alt=""
-                    className="my-card__image"
+                    className="services-card__image img-fluid"
                   />
                 </div>
-                <div className="my-card__body my-card__body--flex">
-                  <h2 className="my-card__title">REFUND POLICY</h2>
-                  <span className="my-card__arrow">→</span>
+                <div className="services-card__body services-card__body--flex">
+                  <h2 className="services-card__title">REFUND POLICY</h2>
+                  <span className="services-card__arrow">→</span>
                 </div>
               </div>
-              <div className="my-card__side my-card__side--back">
-                <div className="my-card__body">
+              <div className="services-card__side services-card__side--back">
+                <div className="services-card__body">
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio pariatur ex dignissimos est sunt corrupti commodi aut autem culpa, aperiam saepe consectetur. Enim consectetur nostrum itaque iure eligendi id tempore.
                   </p>
@@ -347,23 +347,23 @@ export default function Home() {
               </div>
             </div>
           </article>
-          <article className="my-card">
-            <div className="my-card__inner">
-              <div className="my-card__side my-card__side--front">
-                <div className="my-card__image-wrapper">
+          <article className="services-card">
+            <div className="services-card__inner">
+              <div className="services-card__side services-card__side--front">
+                <div className="services-card__image-wrapper">
                   <img
                     src="https://us.123rf.com/450wm/mashmuh/mashmuh2101/mashmuh210100194/161741875-faq-concept-vector-icon-for-website-information-colorful-flat-illustration.jpg?ver=6"
                     alt=""
-                    className="my-card__image"
+                    className="services-card__image img-fluid"
                   />
                 </div>
-                <div className="my-card__body my-card__body--flex">
-                  <h2 className="my-card__title">FAQs</h2>
-                  <span className="my-card__arrow">→</span>
+                <div className="services-card__body services-card__body--flex">
+                  <h2 className="services-card__title">FAQs</h2>
+                  <span className="services-card__arrow">→</span>
                 </div>
               </div>
-              <div className="my-card__side my-card__side--back">
-                <div className="my-card__body">
+              <div className="services-card__side services-card__side--back">
+                <div className="services-card__body">
                   <p>
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis dolorem quasi saepe. Repellendus et provident, sit quidem aliquam eligendi animi nam voluptatum nobis sapiente itaque nulla perspiciatis odio distinctio facilis.
                   </p>
@@ -376,13 +376,7 @@ export default function Home() {
           {/* footer  */}
 
           <Footer />
-
-
-
-
-
         </>
-
       </>
     </>
   )
