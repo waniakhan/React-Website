@@ -25,6 +25,7 @@
     "react-router-dom": "^6.12.1",
     "react-slick": "^0.29.0",
     "react-stars": "^2.2.5",
+    "scrollreveal": "^4.0.9",
     "slick-carousel": "^1.8.1",
     "sweetalert2": "^11.7.12",
     "swiper": "^9.4.1",

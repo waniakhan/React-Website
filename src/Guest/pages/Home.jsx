@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Navigation from '../components/Navigation';
 import Carousel from 'react-bootstrap/Carousel';
@@ -8,9 +8,57 @@ import { BsInstagram } from 'react-icons/bs'
 import { AiFillGithub } from 'react-icons/ai'
 import { BsLinkedin } from 'react-icons/bs'
 import Footer from '../components/Footer';
-
+import ScrollReveal from 'scrollreveal';
 
 export default function Home() {
+  useEffect(() => {
+    const sr = ScrollReveal();
+
+    sr.reveal('.responsive-card', {
+      origin: 'bottom',
+      distance: '20px',
+      duration: 2000,
+      reset: true,
+      delay: 200,
+      easing: 'ease-in-out',
+    });
+
+    sr.reveal('.glowing-text, .heading', {
+      origin: 'left',
+      distance: '20px',
+      duration: 2000,
+      delay: 200,
+         reset: true,
+
+    });
+    sr.reveal('.card', {
+      origin: 'top',
+      distance: '20px',
+      duration: 2000, // Adjust as needed
+      delay: 300,    // Adjust as needed
+      reset: true,
+
+    });
+    sr.reveal('.custom-card', {
+      origin: 'bottom',
+      distance: '20px',
+      duration: 1000, // Adjust as needed
+      scale: 0.8,    // Add this to achieve zoom-in effect
+      easing: 'ease-in-out',
+      reset: true,
+    });
+    sr.reveal('.services-card', {
+      origin: 'left',
+      distance: '20px',
+      duration: 1000, // Adjust as needed
+      delay: 300,
+      easing: 'ease-in-out',
+      reset: true,
+    })
+
+
+
+  }, []);
 
   return (
     <>

@@ -202,7 +202,7 @@ export default function CustomCart() {
             <span className="visually-hidden">Loading...</span>
         </Spinner>
     ) : (
-        <Button variant="secondary" onClick={closeModal} disabled={isLoading}>
+        <Button variant="secondary" style={{width: '100px'}} onClick={closeModal} disabled={isLoading}>
             Confirm
         </Button>
     )}

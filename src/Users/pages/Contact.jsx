@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
@@ -9,6 +8,7 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import ScrollReveal from 'scrollreveal';
 
 export default function Contact() {
   const schema = yup.object().shape({
@@ -21,6 +21,18 @@ export default function Contact() {
     file: yup.mixed().required(),
     terms: yup.bool().required().oneOf([true], 'Terms must be accepted'),
   });
+
+  useEffect(() => {
+    const sr = ScrollReveal();
+
+    sr.reveal('.glass-bg', {
+      origin: 'left',
+      distance: '20px',
+      duration: 2000,
+      reset: true,
+      delay: 200,
+    });
+}, []);
 
   return (
     <>

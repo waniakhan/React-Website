@@ -100,7 +100,7 @@ function BrandsModal({ recallData }) {
                   id="formFile"
                 />
               </div>
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn btn-primary"  style={{width: '130px'}}>
                 Add Brand
               </button>
             </form>

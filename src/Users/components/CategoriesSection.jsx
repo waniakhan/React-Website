@@ -7,7 +7,7 @@ import Pagination from 'react-bootstrap/Pagination';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import ProductPage from '../pages/ProductPage';
 import CategoryPage from '../pages/CategoryPage';
-
+import ScrollReveal from 'scrollreveal';
 
 export default function CategoriesSection() {
   const [categories, setCategories] = useState([]);
@@ -57,6 +57,20 @@ export default function CategoriesSection() {
   const endIndex = startIndex + itemsPerPage;
   const sortedCategories = categories.sort((a, b) => a.name.localeCompare(b.name));
   const visibleCategories = sortedCategories.slice(startIndex, endIndex);
+
+  useEffect(() => {
+    const sr = ScrollReveal();
+
+    sr.reveal('.text-center', {
+      origin: 'bottom',
+      distance: '20px',
+      duration: 2000,
+      reset: true,
+      scale: 0.8, 
+      delay: 200,
+      easing: 'ease',
+    });
+}, []);
 
   return (
     <div className="container">

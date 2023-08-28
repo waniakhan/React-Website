@@ -192,8 +192,8 @@ function ProductsModal({ recallData }) {
                                     <label htmlFor="floatingTextarea2">Description</label>
                                 </div>
                                 <div className="col-md-12 text-center" style={{ marginTop: "20px" }}>
-                                    <Button variant="primary" type="submit">
-                                        Submit
+                                    <Button variant="primary" type="submit" style={{width: '130px'}}>
+                                        Add Product
                                     </Button>
                                 </div>
                             </div>

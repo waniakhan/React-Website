@@ -594,6 +594,8 @@ animation: animate 3s linear infinite;
   border-radius: 50%;
   color: white;
 }
+
+
 @media (max-width: 767px) {
   .services-container {
     flex-direction: column; /* Stack cards vertically */

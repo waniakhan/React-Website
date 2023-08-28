@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useEffect } from 'react';
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -6,21 +6,41 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai'
 import { FaHome, FaShoppingCart, FaInfoCircle, FaEnvelope, FaUser } from 'react-icons/fa';
-
+import ScrollReveal from 'scrollreveal';
 
 
 export default function Navigation() {
+  useEffect(() => {
+    const sr = ScrollReveal();
 
+    sr.reveal('.nav', {
+      origin: 'top',
+      distance: '20px',
+      duration: 2000,
+   
+      delay: 200,
+      easing: 'ease-in-out',
+    });
+    sr.reveal('.br', {
+      origin: 'left',
+      distance: '20px',
+      duration: 2000,
+   
+      delay: 200,
+      easing: 'ease-in-out',
+    });
+
+  }, []);
 
   return (
     <>
       <Navbar expand="lg" className="custom-navbar fixed-top">
         <Container fluid>
-          <Navbar.Brand href="/">ZM Store</Navbar.Brand>
+          <Navbar.Brand href="/" className='br'>ZM Store</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
 
-            <Nav className="mx-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
+            <Nav className="mx-auto my-2 my-lg-0 nav" style={{ maxHeight: '100px' }} navbarScroll>
               <Link to="/" className='text-decoration-none text-dark mx-3'><FaHome className='mx-1' />Home</Link>
               <Link to="/products" className='text-decoration-none text-dark mx-3'><FaShoppingCart className='mx-1' />Products</Link>
               <Link to="/about" className='text-decoration-none text-dark mx-3'><FaInfoCircle className='mx-1' />About</Link>

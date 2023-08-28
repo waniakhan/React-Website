@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Navigation from '../components/Navigation';
 import CategoriesSection from '../components/CategoriesSection';
-
+import ScrollReveal from 'scrollreveal';
 import { Spinner } from 'react-bootstrap';
 import Footer from '../components/Footer';
 export default function Products() {
@@ -48,6 +48,20 @@ export default function Products() {
 
     return () => clearTimeout(timeout);
   }, []);
+
+
+  useEffect(() => {
+    const sr = ScrollReveal();
+
+    sr.reveal('.custom-title ', {
+      origin: 'bottom',
+      distance: '20px',
+      duration: 2000,
+      reset: true,
+      delay: 200,
+      easing: 'ease',
+    });
+}, []);
 
   return (
     <>

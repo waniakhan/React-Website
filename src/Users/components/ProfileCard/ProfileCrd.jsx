@@ -3,6 +3,8 @@ import './profile.css'
 import { GlobalContext } from '../../../context/context';
 import Cookies from 'js-cookie';
 import { useJwt } from 'react-jwt';
+import ScrollReveal from 'scrollreveal';
+
 
 export default function ProfileCard() {
     const { state } = useContext(GlobalContext);
@@ -13,6 +15,21 @@ export default function ProfileCard() {
     const [selectedImage, setSelectedImage] = useState(null); // Add state for selected image
     const [selectedImageName, setSelectedImageName] = useState(''); // Add this line
   
+//=======SCROLL REVEAL ANIMATION=====//
+    useEffect(() => {
+        const sr = ScrollReveal();
+    
+        sr.reveal('.my-card', {
+          origin: 'bottom',
+          distance: '20px',
+          duration: 2000,
+          reset: true,
+          scale: 0.8, 
+          delay: 200,
+          easing: 'ease',
+        });
+    }, []);
+
     useEffect(() => {
         if (decodedToken) {
             setAdminName(decodedToken.username);

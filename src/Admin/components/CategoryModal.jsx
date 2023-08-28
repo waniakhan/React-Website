@@ -99,8 +99,8 @@ function CategoryModal({ recallData }) {
                   id="formFile"
                 />
               </div>
-              <button type="submit" className="btn btn-primary">
-                Submit
+              <button type="submit" className="btn btn-primary"   style={{width: '130px'}}>
+                Add Category
               </button>
             </form>
           )}

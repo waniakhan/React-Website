@@ -13,6 +13,8 @@ import { FaListAlt } from 'react-icons/fa';
 import { CartContext } from '../CartContext/context';
 import { Badge } from 'react-bootstrap'; // Import the Badge component
 import { BiCategory } from 'react-icons/bi';
+import ScrollReveal from 'scrollreveal';
+
 
 export default function Navigation() {
    const [adminName, setAdminName] = useState('');
@@ -38,16 +40,44 @@ export default function Navigation() {
   // Get the selected image from localStorage if available
   const storedImage = decodedToken ? localStorage.getItem(`selectedImage_${adminName}_${decodedToken.email}`) : null;
   const selectedImage = storedImage ? JSON.parse(storedImage) : null;
+  useEffect(() => {
+    const sr = ScrollReveal();
 
+    sr.reveal('.nav', {
+      origin: 'top',
+      distance: '20px',
+      duration: 2000,
+   
+      delay: 200,
+      easing: 'ease-in-out',
+    });
+    sr.reveal('.br', {
+      origin: 'left',
+      distance: '20px',
+      duration: 2000,
+   
+      delay: 200,
+      easing: 'ease-in-out',
+    });
+    sr.reveal('.nav-link,.profile, .log, .search ', {
+      origin: 'right',
+      distance: '20px',
+      duration: 2000,
+   
+      delay: 200,
+      easing: 'ease-in-out',
+    });
+
+  }, []);
   return (
     <>
       <Navbar expand="lg" className="custom-navbar fixed-top">
         <Container fluid>
-          <Navbar.Brand href="/">ZM Store</Navbar.Brand>
+          <Navbar.Brand href="/" className='br'>ZM Store</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
 
-            <Nav className="mx-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
+            <Nav className="mx-auto my-2 my-lg-0 nav" style={{ maxHeight: '100px' }} navbarScroll>
               <Link to="/" className='text-decoration-none text-dark mx-3'><FaHome className='mx-1' />Home</Link>
               <Link to="/products" className='text-decoration-none text-dark mx-3'><FaShoppingCart className='mx-1' />Products</Link>
               <Link to="/userCategory" className='text-decoration-none text-dark mx-3'><BiCategory className='mx-1' />Category</Link>
@@ -77,7 +107,7 @@ export default function Navigation() {
               </form>
             </div>
             <div className="d-flex gap-3">
-            <Link to='/profile' className="btn btn-outline-dark d-flex align-items-center gap-3 " style={{ width: '130px' }}>
+            <Link to='/profile' className="btn btn-outline-dark d-flex align-items-center gap-3 profile" style={{ width: '130px' }}>
                 {selectedImage ? (
                   <img src={selectedImage} style={{ height: '3vh', objectFit: 'contain',  borderRadius: '50%' }} alt="" />
                 ) : (
@@ -85,7 +115,7 @@ export default function Navigation() {
                 )}
                 {adminName}
               </Link>
-              <button className="btn btn-outline-dark " style={{ width: '70px' }} onClick={handleLogout}>
+              <button className="btn btn-outline-dark log " style={{ width: '70px' }} onClick={handleLogout}>
                 Logout
               </button>
             </div>
