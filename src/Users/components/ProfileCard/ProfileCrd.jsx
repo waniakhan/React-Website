@@ -203,7 +203,7 @@ export default function ProfileCard() {
         </div>
 
             <div className="my-card__title" style={{ color: 'black' }}>
-             <b>  username:</b> {adminName}
+             <b>  USERNAME:</b> {adminName}
             </div>
 
 

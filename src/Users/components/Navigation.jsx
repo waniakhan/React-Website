@@ -26,6 +26,8 @@ export default function Navigation() {
 
   const handleLogout = () => {
     Cookies.remove('token');
+    // Navigate to the home page after logout
+    window.location.href = '/'; // Change this to your home URL
   };
 
   const { cart_state } = useContext(CartContext);
@@ -77,7 +79,7 @@ export default function Navigation() {
             <div className="d-flex gap-3">
             <Link to='/profile' className="btn btn-outline-dark d-flex align-items-center gap-3 " style={{ width: '130px' }}>
                 {selectedImage ? (
-                  <img src={selectedImage} style={{ height: '3vh', objectFit: 'contain', borderRadius: '50%' }} alt="" />
+                  <img src={selectedImage} style={{ height: '3vh', objectFit: 'contain',  borderRadius: '50%' }} alt="" />
                 ) : (
                   <img src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png" style={{ height: '3vh', objectFit: 'contain' }} alt="" />
                 )}
